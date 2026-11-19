@@ -22,3 +22,7 @@ func (m *Manager) NowTraffic(onlyProxy bool) (up, down int64) {
 	}
 	return m.uploadBlip.Load(), m.downloadBlip.Load()
 }
+
+func (m *Manager) ConnectionCount() int {
+	return m.connections.Size()
+}
